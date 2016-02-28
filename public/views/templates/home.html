@@ -1,7 +1,7 @@
 <div id="animalPicker">
-  <form action="pickAnimalForm">
+  <form id="pickAnimalForm">
     <select name="animals" ng-model="animalType">
-      <option value="barnyard">Barnyard</option>
+      <option value="barnyard" selected>Barnyard</option>
       <option value="bird">Bird</option>
       <option value="cat">Cat</option>
       <option value="dog">Dog</option>
@@ -11,7 +11,7 @@
       <option value="smallfurry">Small Furry</option>
     </select>
     <button id="genRanAnimal" ng-click="animalFinder()">Random!</button>
-  </form>
+</form>
 </div>
 
 <div id="makeFavorite">

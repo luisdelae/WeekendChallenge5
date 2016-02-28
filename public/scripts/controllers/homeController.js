@@ -1,17 +1,20 @@
 myApp.controller('HomeController', ['$scope', 'AnimalFactory', function($scope, AnimalFactory) {
-    console.log('Address Controller');
-    //
-    // $scope.dataFactory = DataFactory;
-    // $scope.message = 'Addresses!';
-    // $scope.people = [];
-    //
-    // if($scope.dataFactory.peopleData() === undefined) {
+
+    $scope.animalFactory = AnimalFactory;
+    $scope.animalInfo = [];
+
+    $scope.animalFinder = function() {
+      console.log("clicked the random button");
+      $scope.animalFactory.retrieveData($scope.animalType);
+    };
+
+    // if($scope.animalFactory.peopleData() === undefined) {
     //     // initial load
-    //     $scope.dataFactory.retrieveData().then(function() {
-    //         $scope.people = $scope.dataFactory.peopleData();
+    //     $scope.animalFactory.retrieveData().then(function() {
+    //         $scope.animalInfo = $scope.animalFactory.peopleData();
     //     });
     // } else {
-    //     $scope.people = $scope.dataFactory.peopleData();
+    //     $scope.animalInfo = $scope.animalFactory.peopleData();
     // }
 
 }]);

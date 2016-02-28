@@ -1,4 +1,4 @@
-myApp.controller('FavoritesController', ['$scope', 'DataFactory', function($scope, DataFactory) {
+myApp.controller('FavoritesController', ['$scope', 'AnimalFactory', function($scope, AnimalFactory) {
     // console.log('Address Controller');
     //
     // $scope.dataFactory = DataFactory;
