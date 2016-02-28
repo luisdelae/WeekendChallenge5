@@ -6,7 +6,7 @@ var dataRoute = require('./routes/data');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use('/data', dataRoute);
+app.use('/data', dataRoute);
 
 app.use(express.static('public'));
 app.use(express.static('public/views'));

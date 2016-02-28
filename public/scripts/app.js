@@ -9,7 +9,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
         })
         .when('/favorites', {
             templateUrl: '/views/templates/favorites.html',
-            // controller: 'FavoritesController'
+            controller: 'FavoritesController'
         })
         .otherwise({
             redirectTo: 'home'

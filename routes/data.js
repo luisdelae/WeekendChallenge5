@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
     var results = [];
 
     pg.connect(connect, function(err, client, done) {
-        var query = client.query('SELECT * FROM people');
+        var query = client.query('SELECT * FROM savedanimals');
 
         // Stream results back one row at a time
         query.on('row', function(row) {

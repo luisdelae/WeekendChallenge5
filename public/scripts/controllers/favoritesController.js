@@ -1,17 +1,18 @@
 myApp.controller('FavoritesController', ['$scope', 'AnimalFactory', function($scope, AnimalFactory) {
-    // console.log('Address Controller');
-    //
-    // $scope.dataFactory = DataFactory;
+    console.log('Favorites Controller');
+
+    $scope.animalFactory = AnimalFactory;
     // $scope.message = 'Addresses!';
-    // $scope.people = [];
-    //
-    // if($scope.dataFactory.peopleData() === undefined) {
-    //     // initial load
-    //     $scope.dataFactory.retrieveData().then(function() {
-    //         $scope.people = $scope.dataFactory.peopleData();
-    //     });
-    // } else {
-    //     $scope.people = $scope.dataFactory.peopleData();
-    // }
+    $scope.faveAnimals = [];
+
+    if($scope.animalFactory.faveAnimalData() === undefined) {
+        // initial load
+        console.log($scope.faveAnimals);
+        $scope.animalFactory.retreiveFaveAnimals().then(function() {
+            $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
+        });
+    } else {
+        $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
+    }
 
 }]);

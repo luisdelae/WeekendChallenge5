@@ -10,22 +10,24 @@
       <option value="reptile">Reptile</option>
       <option value="smallfurry">Small Furry</option>
     </select>
-    <button id="genRanAnimal" ng-click="animalFinder()">Random!</button>
-</form>
+    <button id="genRanAnimal; showme=true" ng-click="animalFinder()">Random!</button>
+  </form>
 </div>
-
-<div id="makeFavorite">
-  <button id="makeFavBtn">Favorite</button>
-</div>
-
-<div id="randomAnimal">
-  <div id="animalDescription">
-    Description:
+<div>
+  <h2>Random Animal!</h2>
+  <div id="makeFavorite">
+    <button id="makeFavBtn">Favorite</button>
   </div>
-  <div id="animalInfo">
-    Info:
-  </div>
-  <div id="animalPic">
-    Image:
+
+  <div id="randomAnimal">
+    <div id="animalDescription">
+      Description: {{animalInfo.description.$t}}
+    </div>
+    <div id="animalInfo">
+      Info:
+    </div>
+    <div id="animalPic">
+      Image: <img ng-src="{{animalInfo.media.photos.photo[2].$t}}" />
+    </div>
   </div>
 </div>
