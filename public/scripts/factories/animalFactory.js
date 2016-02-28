@@ -39,10 +39,16 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
     };
 
 //function to store an animal to the database. will work on after getting from DB.
-    // var addPerson = function(name) {
-    //   //will have to add logic to add the new entry to the DB
-    //     people.push(name);
-    // };
+    var saveAnimal = function(animal) {
+      //will have to add logic to add the new entry to the DB
+
+      console.log('saving animal to DB');
+      var promise = $http.post('/data', animal).then(function() {
+        console.log('added animal');
+      });
+
+      // faveAnimals.push(animal); //this add animals to the array. not useful right now?
+    };
 
     //PUBLIC
     var publicApi = {
@@ -57,11 +63,10 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
       },
       retreiveFaveAnimals: function(){
         return getAnimals();
+      },
+      addAnimal: function(animal) {
+        saveAnimal(animal);
       }
-      // //change this to addAnimal
-      // addName: function(name) {
-      //   addPerson(name);
-      // }
     };
 
     return publicApi;
