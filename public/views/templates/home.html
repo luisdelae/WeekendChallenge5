@@ -1,7 +1,7 @@
 <div id="animalPicker" class="row">
   <form id="pickAnimalForm">
     <select name="animals" ng-model="animalType">
-      <option value="barnyard" selected>Barnyard</option>
+      <option value="barnyard" selected="selected">Barnyard</option>
       <option value="bird">Bird</option>
       <option value="cat">Cat</option>
       <option value="dog">Dog</option>
@@ -19,23 +19,27 @@
     <h2>Random animal</h2>
   </div>
   <div class="three columns">
-    <button id="makeFavBtn" ng-click="saveAnimal()">Favorite</button>
+    <img src="../../images/favoriteicon.png" class="makeFavBtn" ng-click="saveAnimal()" />
+    <!-- <button id="makeFavBtn" ng-click="saveAnimal()">Favorite</button> -->
   </div>
 </div>
 
 <div ng-show="showme" class="row">
   <div id="randomAnimal">
     <div class="six columns">
-      <div id="animalDescription">
-        Description: {{animalInfo.description.$t | limitTo:1000}}
+      <div class="animalDescription">
+        {{animalInfo.description.$t | limitTo:750}}
       </div>
-      <div id="animalInfo">
+      <div class="animalInfo">
         <ul>
           <li>
             <span>Name: </span>{{animalInfo.name.$t}}
           </li>
           <li>
-            <span>Age:</span>{{animalInfo.age.$t}}
+            <span>Age: </span>{{animalInfo.age.$t}}
+          </li>
+          <li>
+            <span>Breed: </span>{{animalInfo.breeds.breed.$t}}
           </li>
         </ul>
       </div>
