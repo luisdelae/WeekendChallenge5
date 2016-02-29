@@ -1,0 +1,12 @@
+CREATE TABLE savedanimals (
+animal_id SERIAL PRIMARY KEY,
+animal_pet_id VARCHAR(30),
+animal_type VARCHAR(50),
+animal_name VARCHAR(30),
+animal_breed VARCHAR(60),
+animal_description VARCHAR(100),
+animal_age VARCHAR(30),
+animal_sex VARCHAR(30),
+animal_picture_url VARCHAR(100),
+animal_shelter_id VARCHAR(30)
+);
