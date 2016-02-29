@@ -3,6 +3,12 @@ myApp.controller('HomeController', ['$scope', 'AnimalFactory', function($scope, 
     $scope.animalFactory = AnimalFactory;
     $scope.animalInfo = {};
 
+    $scope.animalFactory.retreiveFaveAnimals().then(function() {
+        $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
+        $scope.favesCount = $scope.animalFactory.faveAnimalData().length;
+        console.log("Faves count in Home Controller:: ", $scope.favesCount);
+    });
+
     $scope.animalFinder = function() {
       console.log("clicked the random button");
       // if($scope.animalFactory.animalData() === undefined) {
@@ -20,5 +26,12 @@ myApp.controller('HomeController', ['$scope', 'AnimalFactory', function($scope, 
       console.log('animalInfo from saveAnimal:: ', $scope.animalInfo);
       $scope.animalFactory.addAnimal($scope.animalInfo);
       alert("Saved! Look in your favorites.");
+
+      $scope.animalFactory.retreiveFaveAnimals().then(function() {
+          $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
+          $scope.favesCount = $scope.animalFactory.faveAnimalData().length;
+          console.log("Faves count in Home Controller:: ", $scope.favesCount);
+      });
+
     };
 }]);

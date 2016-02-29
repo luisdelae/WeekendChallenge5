@@ -6,6 +6,7 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
   var query1;
   var request1;
   var faveAnimals;
+  var favesCount;
 
     var getData = function(animalType) {
       key = '8c5651bb1f65ed3b8e5163969b917f60';
@@ -29,10 +30,9 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
     var getAnimals = function() {
         console.log('getting data from DB');
         var promise = $http.get('/data').then(function(response) {
-            faveAnimals = response.data;
+            faveAnimals = response.data; 
             console.log('Async data response:', faveAnimals);
         });
-
         return promise;
     };
 
