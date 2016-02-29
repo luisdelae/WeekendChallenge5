@@ -4,16 +4,17 @@ myApp.controller('FavoritesController', ['$scope', 'AnimalFactory', function($sc
     $scope.animalFactory = AnimalFactory;
     $scope.faveAnimals = [];
 
-    // if($scope.animalFactory.faveAnimalData() === undefined) {
-    //     // initial load
-    //     console.log($scope.faveAnimals);
+    if($scope.animalFactory.faveAnimalData() === undefined) {
+        // initial load
+        console.log($scope.faveAnimals);
         $scope.animalFactory.retreiveFaveAnimals().then(function() {
             $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
-            $scope.favesCount = $scope.animalFactory.faveAnimalData().length;
+            $scope.favesCount = $scope.faveAnimals.length;
             console.log("Faves count in Faves Controller:: ", $scope.favesCount);
         });
-    // } else {
-    //     $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
-    // }
+    } else {
+        $scope.faveAnimals = $scope.animalFactory.faveAnimalData();
+        $scope.favesCount = $scope.faveAnimals.length;
+    }
 
 }]);

@@ -1,6 +1,6 @@
 myApp.factory('AnimalFactory', ['$http', function($http) {
 
-  var animalInfo;
+  var animalInfo = undefined;
   var key;
   var baseURL;
   var query1;
@@ -30,7 +30,7 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
     var getAnimals = function() {
         console.log('getting data from DB');
         var promise = $http.get('/data').then(function(response) {
-            faveAnimals = response.data; 
+            faveAnimals = response.data;
             console.log('Async data response:', faveAnimals);
         });
         return promise;
@@ -40,7 +40,9 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
       console.log('saving animal to DB');
       var promise = $http.post('/data', animal).then(function() {
         console.log('added animal');
+        return getAnimals();
       });
+      return promise;
     };
 
     //PUBLIC
@@ -49,7 +51,7 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
         return animalInfo;
       },
       retrieveData: function(animalType) {
-          return getData(animalType);
+        return getData(animalType);
       },
       faveAnimalData: function() {
         return faveAnimals;
@@ -58,7 +60,7 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
         return getAnimals();
       },
       addAnimal: function(animal) {
-        saveAnimal(animal);
+        return saveAnimal(animal);
       }
     };
 
