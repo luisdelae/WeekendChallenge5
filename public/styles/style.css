@@ -1,3 +1,40 @@
 main {
   background-color: purple;
 }
+h1 {
+  text-align: center;
+}
+#navbar ul {
+  list-style-type: none;
+}
+
+#navbar li{
+  display: inline;
+}
+
+a{
+  text-decoration: none;
+}
+
+form {
+  padding: 10px;
+  text-align: center;
+}
+
+select{
+  width: 30%;
+}
+
+.showCurrentAnimal h2 {
+  display: inline;
+}
+
+#makeFavorite {
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+.animalPic img {
+  width: 80%;
+  height: auto;
+}

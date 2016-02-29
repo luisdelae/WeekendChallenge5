@@ -26,8 +26,6 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
         return promise;
     };
 
-
-// function to get saved animals from database
     var getAnimals = function() {
         console.log('getting data from DB');
         var promise = $http.get('/data').then(function(response) {
@@ -38,16 +36,11 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
         return promise;
     };
 
-//function to store an animal to the database. will work on after getting from DB.
     var saveAnimal = function(animal) {
-      //will have to add logic to add the new entry to the DB
-
       console.log('saving animal to DB');
       var promise = $http.post('/data', animal).then(function() {
         console.log('added animal');
       });
-
-      // faveAnimals.push(animal); //this add animals to the array. not useful right now?
     };
 
     //PUBLIC
@@ -70,42 +63,5 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
     };
 
     return publicApi;
-
-
-  // $scope.data = {};
-  //
-  // function animalFinder() {
-  //   var animalType = animalType;
-  //
-  //
-  //
-  //   $http.jsonp(request1).then(
-  //     function(response) {
-  //       var resObj= response.data.petfinder.pet;
-  //       var shelterId;
-  //       console.log(resObj);
-  //       $scope.animalpicture = resObj.media.photos.photo[2].$t;
-  //       $scope.animalname = resObj.name.$t;
-  //       $scope.animalage = resObj.age.$t;
-  //       $scope.animalbreed = resObj.breeds.breed.$t;
-  //       $scope.animalsex = resObj.sex.$t;
-  //       $scope.animaldescription = resObj.description.$t;
-  //       shelterId = resObj.shelterId.$t;
-  //
-  //       console.log(shelterId);
-  //
-  //       var query2 = 'shelter.get';
-  //       query2 += '?key=' + key;
-  //       query2 += '&id=' + shelterId;
-  //       query2 += '&format=json';
-  //
-  //       var request2 = baseURL + encodeURI(query2) + '&callback=JSON_CALLBACK';
-  //       $http.jsonp(request2).then(
-  //         function(response) {
-  //           $scope.sheltername = response.data.petfinder.shelter.name.$t;
-  //         });
-  //     }
-  //   );
-  // }
 
 }]);

@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
     var results = [];
 
     pg.connect(connect, function(err, client, done) {
-        var query = client.query('SELECT * FROM savedanimals');
+        var query = client.query('SELECT * FROM savedanimals ORDER BY animal_type');
 
         // Stream results back one row at a time
         query.on('row', function(row) {
@@ -34,12 +34,11 @@ router.post('/', function(req, res) {
         animal_type: req.body.animal.$t,
         animal_name: req.body.name.$t,
         animal_breed: req.body.breeds.breed.$t,
-        animal_description: req.body.description.$t,
+        animal_description: req.body.description.$t.substring(0,99),
         animal_age: req.body.age.$t,
         animal_sex: req.body.sex.$t,
         animal_picture_url: req.body.media.photos.photo[2].$t,
         animal_shelter_id: req.body.shelterId.$t,
-        // animal_shelter: req.body.,
     };
 
     pg.connect(connect, function(err, client, done) {

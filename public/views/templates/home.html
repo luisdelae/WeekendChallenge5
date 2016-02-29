@@ -1,4 +1,4 @@
-<div id="animalPicker">
+<div id="animalPicker" class="row">
   <form id="pickAnimalForm">
     <select name="animals" ng-model="animalType">
       <option value="barnyard" selected>Barnyard</option>
@@ -10,24 +10,40 @@
       <option value="reptile">Reptile</option>
       <option value="smallfurry">Small Furry</option>
     </select>
-    <button id="genRanAnimal; showme=true" ng-click="animalFinder()">Random!</button>
+    <button id="genRanAnimal" ng-click="animalFinder(); showme=true">Random!</button>
   </form>
 </div>
-<div>
-  <h2>Random Animal!</h2>
-  <div id="makeFavorite">
+
+<div class="row" ng-show="showme">
+  <div class="nine columns">
+    <h2>Random animal</h2>
+  </div>
+  <div class="three columns">
     <button id="makeFavBtn" ng-click="saveAnimal()">Favorite</button>
   </div>
+</div>
 
+<div ng-show="showme" class="row">
   <div id="randomAnimal">
-    <div id="animalDescription">
-      Description: {{animalInfo.description.$t}}
+    <div class="six columns">
+      <div id="animalDescription">
+        Description: {{animalInfo.description.$t | limitTo:1000}}
+      </div>
+      <div id="animalInfo">
+        <ul>
+          <li>
+            <span>Name: </span>{{animalInfo.name.$t}}
+          </li>
+          <li>
+            <span>Age:</span>{{animalInfo.age.$t}}
+          </li>
+        </ul>
+      </div>
     </div>
-    <div id="animalInfo">
-      Info:
-    </div>
-    <div id="animalPic">
-      Image: <img ng-src="{{animalInfo.media.photos.photo[2].$t}}" />
+    <div class="six columns">
+      <div class="animalPic">
+        <img ng-src="{{animalInfo.media.photos.photo[2].$t}}" />
+      </div>
     </div>
   </div>
 </div>
