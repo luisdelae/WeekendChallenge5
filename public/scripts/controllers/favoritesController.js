@@ -2,7 +2,6 @@ myApp.controller('FavoritesController', ['$scope', 'AnimalFactory', function($sc
     console.log('Favorites Controller');
 
     $scope.animalFactory = AnimalFactory;
-    // $scope.message = 'Addresses!';
     $scope.faveAnimals = [];
 
     if($scope.animalFactory.faveAnimalData() === undefined) {

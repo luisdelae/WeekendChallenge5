@@ -19,5 +19,6 @@ myApp.controller('HomeController', ['$scope', 'AnimalFactory', function($scope, 
     $scope.saveAnimal = function() {
       console.log('animalInfo from saveAnimal:: ', $scope.animalInfo);
       $scope.animalFactory.addAnimal($scope.animalInfo);
+      alert("Saved! Look in your favorites.");
     };
 }]);

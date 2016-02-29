@@ -1,9 +1,30 @@
-<div id="faveAnimals">
-  <div ng-repeat="animals in faveAnimals">
-    <!-- retrieved animal data from DB OK -->
-    <!-- add animal info here -->
-    <p>
-      {{animals}}
-    </p>
+<div class="favorites">
+  <!-- retrieved animal data from DB OK -->
+  <!-- add animal info here -->
+  <div class="row">
+    <h2>Favorites</h2>
+  </div>
+  <div class="row"  ng-repeat="animals in faveAnimals">
+    <div class="two columns favAnimalPic">
+      <img src="{{animals.animal_picture_url}}" />
+    </div>
+
+    <div class="ten columns">
+      <ul>
+        <li>
+          {{animals.animal_description}}...
+        </li>
+        <li>
+          <span>Breed: </span>{{animals.animal_breed}}
+        </li>
+        <li>
+          <span>Age: </span>{{animals.animal_age}}
+        </li>
+        <li>
+          <span>Sex: </span>{{animals.animal_sex}}
+        </li>
+      </ul>
+    </div>
+
   </div>
 </div>

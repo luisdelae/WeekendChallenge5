@@ -1,5 +1,6 @@
 body {
   font-family: 'Poiret One', cursive;
+  background-color: lightgray;
 }
 
 main {
@@ -55,6 +56,10 @@ h2 {
   cursor: pointer;
 }
 
+.makeFavBtn:active {
+  cursor: grabbing;
+}
+
 .animalDescription, .animalInfo {
   font-size: 16px;
   margin: 10px;
@@ -62,4 +67,16 @@ h2 {
 
 span {
   font-weight: bold;
+}
+
+.favAnimalPic img {
+  width: 150px;
+  height: auto;
+  max-height: 150px;
+  border: solid 4px;
+  border-radius: 5px;
+}
+
+.favorites {
+  margin-left: 15px;
 }
