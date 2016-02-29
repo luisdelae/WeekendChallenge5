@@ -1,14 +1,7 @@
 <div id="animalPicker" class="row">
   <form id="pickAnimalForm">
-    <select name="animals" ng-model="animalType">
-      <option value="barnyard" selected="selected">Barnyard</option>
-      <option value="bird">Bird</option>
-      <option value="cat">Cat</option>
-      <option value="dog">Dog</option>
-      <option value="horse">Horse</option>
-      <option value="pig">Pig</option>
-      <option value="reptile">Reptile</option>
-      <option value="smallfurry">Small Furry</option>
+    <select name="animals" ng-options="animals for animals in animaTypesSelect" ng-model="animalType" required>
+
     </select>
     <button id="genRanAnimal" ng-click="animalFinder(); showme=true">Random!</button>
     <p>Favorited Animals: {{favesCount}}</p>
@@ -21,7 +14,6 @@
   </div>
   <div class="three columns">
     <img src="../../images/favoriteicon.png" class="makeFavBtn" ng-click="saveAnimal()" />
-    <!-- <button id="makeFavBtn" ng-click="saveAnimal()">Favorite</button> -->
   </div>
 </div>
 

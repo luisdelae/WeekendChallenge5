@@ -2,6 +2,8 @@ myApp.controller('HomeController', ['$scope', 'AnimalFactory', function($scope, 
 
     $scope.animalFactory = AnimalFactory;
     $scope.animalInfo = {};
+    $scope.animaTypesSelect = ['Barnyard', 'Bird', 'Cat', 'Dog', 'Horse', 'Pig', 'Rabbit', 'Reptile', 'Smallfurry'];
+    $scope.animalTypeSelection = $scope.animalType;
 
     $scope.animalFactory.retreiveFaveAnimals().then(function() {
         $scope.faveAnimals = $scope.animalFactory.faveAnimalData();

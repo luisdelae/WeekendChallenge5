@@ -13,7 +13,7 @@ myApp.factory('AnimalFactory', ['$http', function($http) {
       baseURL = 'http://api.petfinder.com/';
       query1 = 'pet.getRandom';
       query1 += '?key=' + key;
-      query1 += '&animal=' + animalType;
+      query1 += '&animal=' + animalType.toLowerCase();
       query1 += '&output=basic';
       query1 += '&format=json';
       request1 = baseURL + encodeURI(query1) + '&callback=JSON_CALLBACK';
